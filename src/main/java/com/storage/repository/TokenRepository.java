@@ -1,0 +1,13 @@
+package com.storage.repository;
+
+import com.storage.model.Token;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface TokenRepository extends JpaRepository<Token, Long> {
+
+    Token findByUser_Email(String email);
+
+    Token findByToken(String token);
+}
